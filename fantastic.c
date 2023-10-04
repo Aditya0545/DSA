@@ -9,7 +9,6 @@ typedef struct member
 int main()
 {
     member member1, member2, member3, member4;
-    // member1.name = "Aditya";
     strcpy(member1.name, "Aditya");
     strcpy(member2.name, "Noor");
     strcpy(member3.name, "Muskan");
@@ -19,9 +18,9 @@ int main()
     member3.ID = 79;
     member4.ID = 120;
     member1.fav_char = 'P';
-    member2.fav_char = 'N';
+    member2.fav_char = 'S';
     member3.fav_char = 'M';
-    member4.fav_char = 'A';
+    member4.fav_char = 'J';
     printf("Member1's name is %s\n",member1.name);
     printf("Id is %d\n",member1.ID);
     printf("Favourite Character is %c\n",member1.fav_char);
