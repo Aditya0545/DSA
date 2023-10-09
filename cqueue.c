@@ -25,9 +25,9 @@ void insert()
         if(rear==(MAX-1))
             rear=0;
         else
+            rear=rear+1;
         printf("\nEnter the element to be inserted: ");
         scanf("%d",&item);
-        rear = rear + 1;
         queue[rear]=item;
     }
 }
@@ -51,7 +51,7 @@ void delete()
         else if(front==MAX-1)
             front=0;
         else
-        front = front + 1;
+            front++;
     }
 }
 
@@ -67,20 +67,22 @@ void display()
     {
         printf("\nElements in the queue are: ");
         for(i=front;i!=rear;i=(i+1)%MAX)
-            printf("\t%d\t",queue[i]);
-        printf("\t%d\n",queue[i]);
+            printf("%d,",queue[i]);
+        printf("%d\n",queue[i]);
     }
 }
 
 int main()
 {
-    int choice;
+    int ch;
     while(1)
     {
+        printf("******************");
         printf("\n1.Insert\n2.Delete\n3.Display\n4.Exit\n");
         printf("Enter your choice: ");
-        scanf("%d",&choice);
-        switch(choice)
+        scanf("%d",&ch);
+        printf("******************");
+        switch(ch)
         {
             case 1:
             {

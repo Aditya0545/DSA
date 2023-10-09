@@ -19,7 +19,7 @@ void insert_left()
         right = 0;
         printf("\nEnter the number: ");
         scanf("%d", &pushed_item);
-        dq[left] = pushed_item;
+        dq[left] = pushed_item; 
     }
     else if (left == 0)
     {
@@ -46,6 +46,7 @@ void insert_right()
     else if ((left == -1) && (right == -1))
     {
         right = 0;
+        left = 0;
         printf("\nEnter the element: ");
         scanf("%d", &pushed_item);
         dq[right] = pushed_item;
@@ -116,6 +117,12 @@ void delete_right()
 
 void display()
 {
+    if (left == -1 && right == -1)
+    {
+        printf("\nEmpty\n");
+    }
+    else
+    {
     int i = left;
     printf("\nElements are: ");
     while(i != right)
@@ -124,18 +131,19 @@ void display()
         i = (i+1) % MAX;
     }
     printf(" %d", dq[right]);
-    
+    }
 }
 
 int main()
 {
     int ch;
-    while(1)
-    {
-        printf("\n1. insert using left\n2. insert using right\n3. delete using left\n4. delete using right\n5. display\n6. exit\nEnter Your Choice: ");
-        scanf("%d", &ch);
-        switch(ch)
+        printf("\n1. insert using left\n2. insert using right\n3. delete using left\n4. delete using right\n5. display\n6. exit\n");
+        while(1)
         {
+            printf("\nEnter Your Choice: ");
+            scanf("%d", &ch);
+            switch(ch)
+            {
             case 1: insert_left();
             break;
 
@@ -155,7 +163,7 @@ int main()
             break;
 
             default: printf("\nInvalid Input\n");
+            }
         }
-    }
     return 0;
 }
